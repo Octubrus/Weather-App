@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="weatherApp.css" type="text/css" rel="stylesheet">
+
+  <title>Weather App</title>
+  <meta name="description" content="Officialy the Best Weather App in the Whole World.">
+
+</head>
+<body>
+  <div class="container" id="wrapper">
+    <div class="row">
+      <div class="col-xs-0 col-sm-3 col-md-4"></div>
+      <div class="col-xs-12 col-sm-6 col-md-4" id="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+              <form class="form-horizontal" id="theForm">
+                <div class="form-group form-group-lg">
+                  <label class="sr-only" for="weatherSearchInput">City</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="weatherSearchInput" value="" placeholder="Edinburgh, GB">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-default btn-lg" id="searchButton">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                      </button>
+                      <button type="button" class="btn btn-default btn-lg" id="locateBackButton">
+                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </form>
+              <div id="text">
+                <br>
+                <div id="city"></div>
+                <div id="country"></div>
+                <br>
+                <div id="temperature"></div>
+                <div id="weather"></div>
+                <br>
+                <div id="humidity"></div>
+                <div id="wind"></div>
+                <div id="clouds"></div>
+              </div>
+            </div>
+            <div class="col-xs-1"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-0 col-sm-3 col-md-4"></div>
+    </div>
+  </div>
+  <script src="weatherApp.js"></script>
+</body>
+</html>
