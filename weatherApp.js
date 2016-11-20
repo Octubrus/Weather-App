@@ -1,5 +1,5 @@
 
-var latitude, longitude, city, country, temperature, weather, humidity, wind, clouds, citySearch;
+var latitude, longitude, city, country, temperature, weather, humidity, wind, clouds, citySearch, iconSelector;
 
 var cityHolder = document.getElementById("city");
 var countryHolder = document.getElementById("country");
@@ -40,6 +40,7 @@ function getWeather() {
       var obj = JSON.parse(weatherRequest.responseText);
       temperature = Math.round(obj.main.temp);
       weather = obj.weather[0].description;
+      iconSelector = obj.weather[0].main;
       humidity = obj.main.humidity;
       wind = obj.wind.speed;
       clouds = obj.clouds.all;
@@ -61,6 +62,7 @@ function getWeatherByCity() {
       country = obj.sys.country;
       temperature = Math.round(obj.main.temp);
       weather = obj.weather[0].description;
+      iconSelector = obj.weather[0].main;
       humidity = obj.main.humidity;
       wind = obj.wind.speed;
       clouds = obj.clouds.all;
