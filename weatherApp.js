@@ -1,5 +1,5 @@
 
-var latitude, longitude, city, country, temperature, weather, humidity, wind, clouds, citySearch, iconSelector;
+var latitude, longitude, city, country, temperature, weather, humidity, wind, clouds, citySearch, iconSelector, iconHolders, dizzle, storm, cloudy, snow, clear, rain;
 
 var cityHolder = document.getElementById("city");
 var countryHolder = document.getElementById("country");
@@ -11,6 +11,13 @@ var cloudsHolder = document.getElementById("clouds");
 var searchButton = document.getElementById("searchButton");
 var locateBackButton = document.getElementById("locateBackButton");
 var theForm = document.getElementById("theForm");
+var dizzle = document.getElementById("dizzle");
+var storm = document.getElementById("storm");
+var cloudy = document.getElementById("cloudy");
+var snow = document.getElementById("snow");
+var clear = document.getElementById("clear");
+var rain = document.getElementById("rainy");
+var iconHolders = [dizzle, storm, cloudy, snow, clear, rain];
 
 locationByIP();
 
@@ -89,4 +96,28 @@ function displayAll() {
   humidityHolder.innerHTML = "Humidity " + humidity + "%";
   windHolder.innerHTML = "Wind Speed " + wind + " m/s";
   cloudsHolder.innerHTML ="Cloud Cover " + clouds + "%";
+  iconHolders.forEach(function(el) {
+    el.classList.add("hide");
+  })
+  switch (iconSelector) {
+    case "Drizzle":
+    dizzle.classList.remove("hide");
+      break;
+    case "Clouds":
+    cloudy.classList.remove("hide");
+      break;
+    case "Rain":
+    rain.classList.remove("hide");
+      break;
+    case "Snow":
+    snow.classList.remove("hide");
+      break;
+    case "Clear":
+    clear.classList.remove("hide");
+      break;
+    case "Thunderstorm":
+    storm.classList.remove("hide");
+      break;
+    default:
+  }
 }
