@@ -118,6 +118,6 @@ function displayAll() {
     case "Thunderstorm":
     storm.classList.remove("hide");
       break;
-    default:
+    default: cloudy.classList.remove("hide");
   }
 }

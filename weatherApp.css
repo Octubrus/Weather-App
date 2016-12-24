@@ -8,14 +8,21 @@ body {
   background-color: #161414;
   color: #F2F2F2;
 
-
 }
-div#wrapper {
 
-}
 div#content {
   font-size: 1.6em;
-  margin-top: 7vw;
+  margin-top: 6vw;
+}
+a {
+  color: #0cf;
+}
+div#references {
+  text-align: center;
+  margin-top: 2em;
+}
+div#references > p {
+  font-size: 0.6em;
 }
 div#weatherIcons {
   display: inline-block;
