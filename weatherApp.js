@@ -91,7 +91,7 @@ locateBackButton.addEventListener("click", locationByIP);
 function displayAll() {
   cityHolder.innerHTML = city;
   countryHolder.innerHTML = country;
-  temperatureHolder.innerHTML = temperature + " °C";
+  temperatureHolder.innerHTML = temperature + " °";
   weatherHolder.innerHTML = weather;
   humidityHolder.innerHTML = "Humidity " + humidity + "%";
   windHolder.innerHTML = "Wind Speed " + wind + " m/s";
@@ -120,4 +120,16 @@ function displayAll() {
       break;
     default: cloudy.classList.remove("hide");
   }
+}
+
+function toggle(button)
+{
+    if(button.value=="C")
+    {
+        button.value="F";
+    }
+    else
+    {
+        button.value="C";
+    }
 }

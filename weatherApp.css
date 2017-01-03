@@ -17,13 +17,26 @@ div#content {
 a {
   color: #0cf;
 }
+a:hover {
+  color: #006dcc;
+}
 div#references {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 div#references > p {
   font-size: 0.6em;
 }
+#button1 {
+  background-color: #161414;
+  color: #0cf;
+  border: none;
+  padding: 0;
+}
+#button1:hover {
+  color: #006dcc;
+}
+
 div#weatherIcons {
   display: inline-block;
   max-width: 42em;
