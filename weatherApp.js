@@ -35,7 +35,7 @@ function locationByIP() {
     getWeather();  // uses user's location and proceeds to fetch weather data
     }
   };
-  locationRequest.open("GET", 'http://ipinfo.io/json', true);
+  locationRequest.open("GET", 'https://ipinfo.io/json', true);
   locationRequest.send();
 }
 
