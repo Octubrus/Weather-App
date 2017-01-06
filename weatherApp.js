@@ -1,5 +1,5 @@
 
-var latitude, longitude, city, country, temperature, weather, humidity, wind, clouds, citySearch, iconSelector, iconHolders, dizzle, storm, cloudy, snow, clear, rain;
+var latitude, longitude, city, country, temperature, weather, humidity, wind, clouds, citySearch, iconSelector, iconHolders, dizzle, storm, cloudy, snow, clear, rain, buttonValue;
 
 var cityHolder = document.getElementById("city");
 var countryHolder = document.getElementById("country");
@@ -39,7 +39,7 @@ function locationByIP() {
   locationRequest.send();
 }
 
-function getWeather() {
+function getWeather() {  // gets local weather
   var url = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=285e072753cf31ddbeb04dfd941d01fd&units=metric";
   var weatherRequest = new XMLHttpRequest();
   weatherRequest.onreadystatechange = function () {
@@ -58,7 +58,7 @@ function getWeather() {
   weatherRequest.send();
 }
 
-function getWeatherByCity() {
+function getWeatherByCity() {   // called when search bar is used
   citySearch = document.getElementById("weatherSearchInput").value;
   var url = "http://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&APPID=285e072753cf31ddbeb04dfd941d01fd&units=metric";
   var weatherRequest = new XMLHttpRequest();
@@ -87,11 +87,20 @@ theForm.addEventListener('submit', function(e) {
 searchButton.addEventListener("click", getWeatherByCity);
 locateBackButton.addEventListener("click", locationByIP);
 
+function toggle(button) {  // onclick - changes C/F
+  if(button.value == "C") {
+      button.value = "F";
+      temperatureHolder.innerHTML = Math.round(temperature * (9/5) + 32) + " °";
+  }
+  else {
+      button.value = "C";
+      temperatureHolder.innerHTML = temperature + " °";
+  }
+}
 
 function displayAll() {
   cityHolder.innerHTML = city;
   countryHolder.innerHTML = country;
-  temperatureHolder.innerHTML = temperature + " °";
   weatherHolder.innerHTML = weather;
   humidityHolder.innerHTML = "Humidity " + humidity + "%";
   windHolder.innerHTML = "Wind Speed " + wind + " m/s";
@@ -120,16 +129,11 @@ function displayAll() {
       break;
     default: cloudy.classList.remove("hide");
   }
-}
-
-function toggle(button)
-{
-    if(button.value=="C")
-    {
-        button.value="F";
-    }
-    else
-    {
-        button.value="C";
-    }
+  var buttonValue = document.getElementById("button1").value;
+  if (buttonValue == "F") {
+    temperatureHolder.innerHTML = Math.round(temperature * (9/5) + 32) + " °";
+  }
+  else {
+    temperatureHolder.innerHTML = temperature + " °";
+  }
 }

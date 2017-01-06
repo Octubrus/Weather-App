@@ -36,7 +36,6 @@ div#references > p {
 #button1:hover {
   color: #006dcc;
 }
-
 div#weatherIcons {
   display: inline-block;
   max-width: 42em;
@@ -45,6 +44,8 @@ div#weatherIcons {
   font-family: 'Roboto', sans-serif;
   float: right;
 }
+
+/* icon CSS starts HERE */
 .icon {
   position: relative;
   display: inline-block;
